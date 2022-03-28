@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import uMotif_clean
+@testable @preconcurrency import uMotif_clean
 
 class uMotif_cleanTests: XCTestCase {
 
@@ -18,19 +18,39 @@ class uMotif_cleanTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testContentViewModel_shouldExist() async throws {
+        let contentVM = await ContentViewModel(getJokesUseCase: nil)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testContentViewModel_shouldReturnZeroJokes () async throws {
+        let useCase = CNJokesGetUseCase_ErrorMock(dataSource: nil)
+        let contentVM = await ContentViewModel(getJokesUseCase: useCase)
+        let jokes = await contentVM.jokes
+        XCTAssertTrue(jokes.isEmpty)
+        XCTAssertEqual(jokes.count, 0)
+    }
+    
+    func testContentViewModel_shouldReturnTwoJokes () async throws {
+        let dataSource = CNJokesDataSource_TwoJokesMock()
+        let useCase = GetJokesUseCase(dataSource: dataSource)
+        let contentVM = await ContentViewModel(getJokesUseCase: useCase)
+        await contentVM.getJokes()
+        let jokes = await contentVM.jokes
+        XCTAssertFalse(jokes.isEmpty)
+        XCTAssertEqual(jokes.count, 2)
+    }
+    
+    func testContentViewModel_shouldDisplayErrorMessage () async throws {
+        let useCase = CNJokesGetUseCase_ErrorMock(dataSource: nil)
+        let contentVM = await ContentViewModel(getJokesUseCase: useCase)
+        await contentVM.getJokes()
+        let jokes = await contentVM.jokes
+        let error = await contentVM.hasError
+        let message = await contentVM.errorMessage
+        XCTAssertTrue(jokes.isEmpty)
+        XCTAssertEqual(jokes.count, 0)
+        XCTAssertEqual(error, true)
+        XCTAssertEqual(message, "The operation couldn’t be completed. (uMotif_clean.UseCaseError error 0.)")
     }
 
 }
