@@ -26,7 +26,9 @@ class uMotif_cleanTests: XCTestCase {
     func testContentViewModel_shouldReturnZeroJokes () async throws {
         let useCase = CNJokeGetUseCase_ErrorMock(dataSource: nil)
         let contentVM = await ContentViewModel(getJokeUseCase: useCase)
+        await contentVM.getJokes()
         let jokes = await contentVM.jokes
+        
         XCTAssertTrue(jokes.isEmpty)
         XCTAssertEqual(jokes.count, 0)
     }
@@ -38,6 +40,7 @@ class uMotif_cleanTests: XCTestCase {
         await contentVM.getJokes()
         let jokes = await contentVM.jokes
         let error = await contentVM.hasError
+        
         XCTAssertFalse(jokes.isEmpty)
         XCTAssertEqual(jokes.count, 2)
         XCTAssertFalse(error)
@@ -50,6 +53,7 @@ class uMotif_cleanTests: XCTestCase {
         let jokes = await contentVM.jokes
         let error = await contentVM.hasError
         let message = await contentVM.errorMessage
+        
         XCTAssertTrue(jokes.isEmpty)
         XCTAssertEqual(jokes.count, 0)
         XCTAssertTrue(error)
