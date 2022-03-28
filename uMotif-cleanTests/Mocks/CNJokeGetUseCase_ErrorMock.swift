@@ -8,7 +8,7 @@
 import Foundation
 @testable import uMotif_clean
 
-struct CNJokesGetUseCase_ErrorMock: GetJokesUseCaseProtocol {
+struct CNJokeGetUseCase_ErrorMock: CNGetJokeUseCaseProtocol {
 
     var dataSource: CNJokeDataSourceProtocol?
     

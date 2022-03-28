@@ -8,7 +8,7 @@
 import Foundation
 @testable import uMotif_clean
 
-struct CNJokesDataSource_TwoJokesMock: CNJokeDataSourceProtocol {
+struct CNJokeDataSource_TwoJokesMock: CNJokeDataSourceProtocol {
     
     var dataService: CNJokeServiceProtocol?
     

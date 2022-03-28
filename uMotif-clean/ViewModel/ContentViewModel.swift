@@ -10,10 +10,10 @@ import Foundation
 @MainActor
 class ContentViewModel: ObservableObject {
     
-    var getJokesUseCase: GetJokesUseCaseProtocol?
+    var getJokeUseCase: CNGetJokeUseCaseProtocol?
     
-    init(getJokesUseCase: GetJokesUseCaseProtocol?) {
-        self.getJokesUseCase = getJokesUseCase
+    init(getJokeUseCase: CNGetJokeUseCaseProtocol?) {
+        self.getJokeUseCase = getJokeUseCase
     }
             
     @Published var jokes: [CNJoke] = []
@@ -27,7 +27,7 @@ class ContentViewModel: ObservableObject {
         isLoading = true
         errorMessage = ""
         
-        let result = await getJokesUseCase?.execute()
+        let result = await getJokeUseCase?.execute()
         isLoading = false
         
         switch result {

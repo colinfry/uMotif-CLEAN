@@ -19,21 +19,21 @@ class uMotif_cleanTests: XCTestCase {
     }
 
     func testContentViewModel_shouldExist() async throws {
-        let contentVM = await ContentViewModel(getJokesUseCase: nil)
+        let contentVM = await ContentViewModel(getJokeUseCase: nil)
     }
 
     func testContentViewModel_shouldReturnZeroJokes () async throws {
-        let useCase = CNJokesGetUseCase_ErrorMock(dataSource: nil)
-        let contentVM = await ContentViewModel(getJokesUseCase: useCase)
+        let useCase = CNJokeGetUseCase_ErrorMock(dataSource: nil)
+        let contentVM = await ContentViewModel(getJokeUseCase: useCase)
         let jokes = await contentVM.jokes
         XCTAssertTrue(jokes.isEmpty)
         XCTAssertEqual(jokes.count, 0)
     }
     
     func testContentViewModel_shouldReturnTwoJokes () async throws {
-        let dataSource = CNJokesDataSource_TwoJokesMock()
-        let useCase = GetJokesUseCase(dataSource: dataSource)
-        let contentVM = await ContentViewModel(getJokesUseCase: useCase)
+        let dataSource = CNJokeDataSource_TwoJokesMock()
+        let useCase = CNGetJokeUseCase(dataSource: dataSource)
+        let contentVM = await ContentViewModel(getJokeUseCase: useCase)
         await contentVM.getJokes()
         let jokes = await contentVM.jokes
         XCTAssertFalse(jokes.isEmpty)
@@ -41,8 +41,8 @@ class uMotif_cleanTests: XCTestCase {
     }
     
     func testContentViewModel_shouldDisplayErrorMessage () async throws {
-        let useCase = CNJokesGetUseCase_ErrorMock(dataSource: nil)
-        let contentVM = await ContentViewModel(getJokesUseCase: useCase)
+        let useCase = CNJokeGetUseCase_ErrorMock(dataSource: nil)
+        let contentVM = await ContentViewModel(getJokeUseCase: useCase)
         await contentVM.getJokes()
         let jokes = await contentVM.jokes
         let error = await contentVM.hasError
@@ -51,6 +51,20 @@ class uMotif_cleanTests: XCTestCase {
         XCTAssertEqual(jokes.count, 0)
         XCTAssertEqual(error, true)
         XCTAssertEqual(message, "The operation couldn’t be completed. (uMotif_clean.UseCaseError error 0.)")
+    }
+    
+    func testContentViewModel_testLiveService () async throws {
+        let service = CNJokeService()
+        let dataSource = CNJokeDataSource(dataService: service)
+        let useCase = CNGetJokeUseCase(dataSource: dataSource)
+        let contentVM = await ContentViewModel(getJokeUseCase: useCase)
+        await contentVM.getJokes()
+        let jokes = await contentVM.jokes
+        let error = await contentVM.hasError
+        
+        XCTAssertFalse(jokes.isEmpty)
+        XCTAssertEqual(jokes.count, 55)
+        XCTAssertEqual(error, false)
     }
 
 }

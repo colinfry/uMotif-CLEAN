@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol GetJokesUseCaseProtocol {
+protocol CNGetJokeUseCaseProtocol {
     func execute() async -> Result<[CNJoke], UseCaseError>
 }
 
-struct GetJokesUseCase: GetJokesUseCaseProtocol {
+struct CNGetJokeUseCase: CNGetJokeUseCaseProtocol {
 
     var dataSource: CNJokeDataSourceProtocol?
     

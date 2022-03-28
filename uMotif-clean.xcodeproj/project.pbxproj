@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B54F05DC27F0A1420023477B /* CNJokesDataSource_TwoJokesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F05DB27F0A1420023477B /* CNJokesDataSource_TwoJokesMock.swift */; };
-		B54F05E027F1B4B20023477B /* CNJokesGetUseCase_ErrorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F05DF27F1B4B20023477B /* CNJokesGetUseCase_ErrorMock.swift */; };
+		B54F05DC27F0A1420023477B /* CNJokeDataSource_TwoJokesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F05DB27F0A1420023477B /* CNJokeDataSource_TwoJokesMock.swift */; };
+		B54F05E027F1B4B20023477B /* CNJokeGetUseCase_ErrorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F05DF27F1B4B20023477B /* CNJokeGetUseCase_ErrorMock.swift */; };
 		B5D1F0B927EF3E5000D3396F /* uMotif_cleanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0B827EF3E5000D3396F /* uMotif_cleanApp.swift */; };
 		B5D1F0BB27EF3E5000D3396F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0BA27EF3E5000D3396F /* ContentView.swift */; };
 		B5D1F0BD27EF3E5200D3396F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D1F0BC27EF3E5200D3396F /* Assets.xcassets */; };
@@ -19,8 +19,8 @@
 		B5D1F0E427EF3EBF00D3396F /* CNJoke-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0E327EF3EBF00D3396F /* CNJoke-model.swift */; };
 		B5D1F0E727EF3F5300D3396F /* CNJokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0E627EF3F5300D3396F /* CNJokeService.swift */; };
 		B5D1F0E927EF41D500D3396F /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0E827EF41D500D3396F /* ServiceConstants.swift */; };
-		B5D1F0EC27EF422700D3396F /* CNJokeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0EB27EF422700D3396F /* CNJokeDataSource.swift */; };
-		B5D1F0EF27EF436200D3396F /* CNJokesGet-UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0EE27EF436200D3396F /* CNJokesGet-UseCase.swift */; };
+		B5D1F0EC27EF422700D3396F /* CNJokesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0EB27EF422700D3396F /* CNJokesDataSource.swift */; };
+		B5D1F0EF27EF436200D3396F /* CNJokeGet-UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0EE27EF436200D3396F /* CNJokeGet-UseCase.swift */; };
 		B5D1F0F127EF43A600D3396F /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0F027EF43A600D3396F /* UseCaseError.swift */; };
 		B5D1F0F427EF8AC100D3396F /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F0F327EF8AC100D3396F /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -43,8 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B54F05DB27F0A1420023477B /* CNJokesDataSource_TwoJokesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokesDataSource_TwoJokesMock.swift; sourceTree = "<group>"; };
-		B54F05DF27F1B4B20023477B /* CNJokesGetUseCase_ErrorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokesGetUseCase_ErrorMock.swift; sourceTree = "<group>"; };
+		B54F05DB27F0A1420023477B /* CNJokeDataSource_TwoJokesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokeDataSource_TwoJokesMock.swift; sourceTree = "<group>"; };
+		B54F05DF27F1B4B20023477B /* CNJokeGetUseCase_ErrorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokeGetUseCase_ErrorMock.swift; sourceTree = "<group>"; };
 		B5D1F0B527EF3E5000D3396F /* uMotif-clean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uMotif-clean.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D1F0B827EF3E5000D3396F /* uMotif_cleanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uMotif_cleanApp.swift; sourceTree = "<group>"; };
 		B5D1F0BA27EF3E5000D3396F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		B5D1F0E327EF3EBF00D3396F /* CNJoke-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNJoke-model.swift"; sourceTree = "<group>"; };
 		B5D1F0E627EF3F5300D3396F /* CNJokeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokeService.swift; sourceTree = "<group>"; };
 		B5D1F0E827EF41D500D3396F /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
-		B5D1F0EB27EF422700D3396F /* CNJokeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokeDataSource.swift; sourceTree = "<group>"; };
-		B5D1F0EE27EF436200D3396F /* CNJokesGet-UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNJokesGet-UseCase.swift"; sourceTree = "<group>"; };
+		B5D1F0EB27EF422700D3396F /* CNJokesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokesDataSource.swift; sourceTree = "<group>"; };
+		B5D1F0EE27EF436200D3396F /* CNJokeGet-UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNJokeGet-UseCase.swift"; sourceTree = "<group>"; };
 		B5D1F0F027EF43A600D3396F /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 		B5D1F0F327EF8AC100D3396F /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +92,8 @@
 		B54F05DA27F0A1100023477B /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				B54F05DB27F0A1420023477B /* CNJokesDataSource_TwoJokesMock.swift */,
-				B54F05DF27F1B4B20023477B /* CNJokesGetUseCase_ErrorMock.swift */,
+				B54F05DB27F0A1420023477B /* CNJokeDataSource_TwoJokesMock.swift */,
+				B54F05DF27F1B4B20023477B /* CNJokeGetUseCase_ErrorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 		B5D1F0EA27EF420900D3396F /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				B5D1F0EB27EF422700D3396F /* CNJokeDataSource.swift */,
+				B5D1F0EB27EF422700D3396F /* CNJokesDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D1F0F027EF43A600D3396F /* UseCaseError.swift */,
-				B5D1F0EE27EF436200D3396F /* CNJokesGet-UseCase.swift */,
+				B5D1F0EE27EF436200D3396F /* CNJokeGet-UseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -346,8 +346,8 @@
 				B5D1F0E427EF3EBF00D3396F /* CNJoke-model.swift in Sources */,
 				B5D1F0B927EF3E5000D3396F /* uMotif_cleanApp.swift in Sources */,
 				B5D1F0F427EF8AC100D3396F /* ContentViewModel.swift in Sources */,
-				B5D1F0EF27EF436200D3396F /* CNJokesGet-UseCase.swift in Sources */,
-				B5D1F0EC27EF422700D3396F /* CNJokeDataSource.swift in Sources */,
+				B5D1F0EF27EF436200D3396F /* CNJokeGet-UseCase.swift in Sources */,
+				B5D1F0EC27EF422700D3396F /* CNJokesDataSource.swift in Sources */,
 				B5D1F0E727EF3F5300D3396F /* CNJokeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,9 +356,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B54F05DC27F0A1420023477B /* CNJokesDataSource_TwoJokesMock.swift in Sources */,
+				B54F05DC27F0A1420023477B /* CNJokeDataSource_TwoJokesMock.swift in Sources */,
 				B5D1F0CA27EF3E5200D3396F /* uMotif_cleanTests.swift in Sources */,
-				B54F05E027F1B4B20023477B /* CNJokesGetUseCase_ErrorMock.swift in Sources */,
+				B54F05E027F1B4B20023477B /* CNJokeGetUseCase_ErrorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
