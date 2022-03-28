@@ -21,20 +21,22 @@ struct ContentView: View {
     
     fileprivate func JokesList() -> some View {
         ZStack {
-            List {
-                ForEach(viewModel.jokes){ item in
-                    Text(item.joke)
-                        .font(.body)
-                        .padding(5)
+            NavigationView {
+                List {
+                    ForEach(viewModel.jokes){ item in
+                        Text(item.joke)
+                            .font(.body)
+                            .padding(5)
+                    }
                 }
-            }
-            .navigationTitle(viewModel.navTitle)
-            .task {
-               await viewModel.getJokes()
-            }
-            .alert("Error", isPresented: $viewModel.hasError) {
-            } message: {
-                Text(viewModel.errorMessage)
+                .navigationTitle(viewModel.navTitle)
+                .task {
+                   await viewModel.getJokes()
+                }
+                .alert("Error", isPresented: $viewModel.hasError) {
+                } message: {
+                    Text(viewModel.errorMessage)
+                }
             }
             
             ProgressView("Loadingjokes")
