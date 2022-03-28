@@ -13,6 +13,10 @@ class ContentViewModel: ObservableObject {
     var getJokeUseCase: CNGetJokeUseCaseProtocol?
     
     init(getJokeUseCase: CNGetJokeUseCaseProtocol?) {
+        guard getJokeUseCase != nil else {
+            self.getJokeUseCase = CNGetJokeUseCase(dataSource: CNJokeDataSource(dataService: CNJokeService()))
+            return
+        }
         self.getJokeUseCase = getJokeUseCase
     }
             

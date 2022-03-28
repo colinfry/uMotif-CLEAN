@@ -12,7 +12,7 @@ struct ContentView: View {
     @StateObject var viewModel: ContentViewModel
     
     init() {
-        _viewModel = StateObject(wrappedValue: ContentViewModel(getJokeUseCase: CNGetJokeUseCase(dataSource: CNJokeDataSource(dataService: CNJokeService()))))
+        _viewModel = StateObject(wrappedValue: ContentViewModel(getJokeUseCase: nil))
     }
         
     var body: some View {

@@ -20,6 +20,7 @@ class uMotif_cleanTests: XCTestCase {
 
     func testContentViewModel_shouldExist() async throws {
         let contentVM = await ContentViewModel(getJokeUseCase: nil)
+        XCTAssertFalse(contentVM == nil)
     }
 
     func testContentViewModel_shouldReturnZeroJokes () async throws {
@@ -36,8 +37,10 @@ class uMotif_cleanTests: XCTestCase {
         let contentVM = await ContentViewModel(getJokeUseCase: useCase)
         await contentVM.getJokes()
         let jokes = await contentVM.jokes
+        let error = await contentVM.hasError
         XCTAssertFalse(jokes.isEmpty)
         XCTAssertEqual(jokes.count, 2)
+        XCTAssertFalse(error)
     }
     
     func testContentViewModel_shouldDisplayErrorMessage () async throws {
@@ -49,7 +52,7 @@ class uMotif_cleanTests: XCTestCase {
         let message = await contentVM.errorMessage
         XCTAssertTrue(jokes.isEmpty)
         XCTAssertEqual(jokes.count, 0)
-        XCTAssertEqual(error, true)
+        XCTAssertTrue(error)
         XCTAssertEqual(message, "The operation couldn’t be completed. (uMotif_clean.UseCaseError error 0.)")
     }
     
